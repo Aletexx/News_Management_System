@@ -1,0 +1,26 @@
+<body>
+<div class="sidenav">
+  <%= link_to "Admin Home", admin_news_index_path %>
+  <%= link_to "Create news", new_admin_news_path %>
+  <%= link_to "Logout", news_home_path %>
+</div>
+<div class="main">
+  <h1 class="pageTitle">Admin - Games News Management System</h1>
+  <div align="center">
+    <ul id="myUL">
+      <h2 id="pageName">Add a news</h2>
+      <div class="forms">
+        <%= form_tag :action => 'create' do %>
+          <p><label for = "news_title">Title</label> <%= text_field 'news', 'title' %></p>
+          <p><label for = "news_source">Source</label> <%= text_field 'news', 'source' %></p>
+          <p><label for = "news_subject_id">Category</label> <%= collection_select(:news, :category_id, @categories, :id, :name) %></p>
+          <p><label for = "news_content">Content</label><br/> <%= text_area 'news', 'content' %></p>
+          <%= submit_tag "Create" %>
+        <% end %>
+        <br>
+        <%= link_to 'Back to admin homepage', admin_news_index_path%>
+      </div>
+    </ul>
+  </div>
+</div>
+</body>

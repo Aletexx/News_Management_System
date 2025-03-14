@@ -1,0 +1,27 @@
+<div class="sidenav">
+  <%= link_to "Home", {:action => 'home'} %>
+  <%= link_to "News", {:action => 'show_categories'} %>
+  <%= link_to "Admin", admin_news_index_path %>
+</div>
+<div class="main">
+
+  <h1 class="pageTitle">Games News</h1>
+
+  <ul id="myUL">
+    <h2 class="title">Search Results for "<%= params[:query] %>"</h2>
+    <% if @news.blank? %>
+      <p>No news articles matched your search query.</p>
+    <% else %>
+      <!-- show  news if searched word match-->
+      <% @news.where(hidden: false).each do |news_item| %>
+        <li class="article">
+          <h3 id="h3_show_cat"><%= news_item.title %></h3>
+          <p class="maxText"><%= news_item.content%></p>
+          <p><%= link_to "Read More", {:action => 'show', :id => news_item.id} %></p>
+        </li>
+      <% end %>
+    <% end %>
+    <br>
+    <%= link_to 'Back to homepage', news_home_path %>
+  </ul>
+</div>

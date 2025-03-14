@@ -1,0 +1,46 @@
+  <body>
+  <div class="sidenav">
+    <%= link_to "Home", {:action => 'home'} %>
+    <%= link_to "News", {:action => 'show_categories'} %>
+    <%= link_to "Admin", admin_news_index_path %>
+  </div>
+  <div class="main">
+    <h1 class="pageTitle">Games News </h1> <br>
+    <div align="center">
+      <ul id="myUL">
+        <!-- SHow individual news-->
+        <h2 id="ind_news_title"><%= @news.title %></h2>
+        <div class="forms" >
+          <div class="comment_align">
+          <p>
+            <strong>Source: </strong><%= @news.source %><br />
+            <strong>Category: </strong><%= @news.category.name %><br />
+            <strong>Date: </strong> <%= @news.created_at %><br />
+            <p><%= @news.content %></p>
+          </p>
+          </div>
+          <hr />
+          <br>
+          <!-- insert a Comment-->
+          <div class="comment_align">
+          <h2 id="pageName">Comments</h2>
+          <% @news.comments.each do |comment| %>
+            <p > <strong>Name:</strong> <%= comment.commenter %> </p>
+            <p> <strong>Comment:</strong> <%= comment.body %> </p>
+              <br>
+          <% end %>
+          </div>
+          <h3 id="h3_show_cat">Add a comment:</h3>
+          <%= form_with model: [ @news, @news.comments.build ] do |form| %>
+            <p> <%= form.label :commenter %><br> <%= form.text_field :commenter %> </p>
+            <p> <%= form.label :body %><br> <%= form.text_area :body %> </p> <p> <%= form.submit %> </p>
+          <% end %>
+          <br>
+          <%= link_to 'Back to homepage', news_home_path %>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+
+  </body>

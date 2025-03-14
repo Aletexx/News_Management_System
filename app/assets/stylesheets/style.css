@@ -1,0 +1,485 @@
+/* Styles for the page title */
+.pageTitle {
+    background-color: white; /* White background */
+    color: #042b02; /* Title text color */
+    text-align: center; /* Center the text */
+    padding: 7px 0; /* Add some padding */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    width: calc(100% - 180px); /* Adjust width to account for the sidebar width */
+    position: fixed; /* Keep it at the top */
+    top: 0;
+    left: 200px; /* Push it to the right so it starts after the sidenav */
+    z-index: 1000; /* Ensure it stays on top */
+    border-bottom: 2px solid #ccc; /* Optional: Adds a bottom border */
+    margin-top: 0px;
+}
+
+
+
+/* Sidebar */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1f6802;
+    overflow-x: hidden;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav a {
+    padding: 12px 16px;
+    display: block;
+    font-size: 18px;
+    color: #d1d1d1;
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.sidenav a:hover {
+    color: #fff;
+    background-color: #042b02;
+    border-left: 3px solid #079f01;
+}
+
+/* Main Content */
+.main {
+    margin-left: 220px;
+    padding: 20px;
+    max-width: 900px;
+}
+
+.title {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #054300;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* General Typography */
+body {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 60px;
+}
+
+/* Headings */
+h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* News List */
+.news_list {
+    list-style-type: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news_list h2 a, .news_list h3 a {
+    text-decoration: none;
+    color: #447a0e;
+    font-weight: bold;
+}
+
+.news_list h2 a:hover, .news_list h3 a:hover {
+    color: #042b02;
+}
+
+/* Forms */
+.forms {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+
+
+/* Buttons */
+input[type="submit"],
+
+#mySearchButton {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover,
+#mySearchButton:hover {
+    background-color: #218838;
+}
+
+button.delete {
+    background-color: #dc3545;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+button.hide {
+    background-color: #ffc107;
+}
+
+button.hide:hover {
+    background-color: #e0a800;
+}
+
+/* Search Bar */
+#myInput {
+    width: 70%;
+    font-size: 16px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+#form_search {
+
+    margin-left: 70px;
+
+}
+
+/* Comments */
+.comment_align {
+    text-align: left;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidenav a {
+        float: left;
+        text-align: center;
+        width: 100%;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 15px;
+    }
+}
+
+
+#ind_news_title {
+    text-align: center;
+    color: #447a0e;
+    font-family: Sans-Serif;
+    font-size: 20px;
+}
+
+.maxText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+    overflow: hidden;
+    text-align: left;
+}
+
+.crud_btn {
+    display: flex; /* Lays out child elements in a horizontal row */
+    justify-content: center; /* Aligns buttons horizontally, center-aligned */
+    gap: 10px; /* Adds spacing between buttons */
+
+}
+
+#link_style_button {
+    border: none !important;
+    color: #042b02 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    background: none;
+}
+
+#link_style_button:hover {
+    color: #76dd0c; /* Darker blue on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/*.sidenav {*/
+/*    height: 100%;*/
+/*    width: 160px;*/
+/*    position: fixed;*/
+/*    z-index: 1;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background-color: #432600;*/
+/*    overflow-x: hidden;*/
+/*    padding-top: 20px;*/
+/*}*/
+
+
+/*.sidenav a {*/
+/*    padding: 6px 8px 6px 16px;*/
+/*    text-decoration: none;*/
+/*    font-size: 25px;*/
+/*    color: #a9a3a3;*/
+/*    display: block;*/
+/*}*/
+
+
+/*.sidenav a:hover {*/
+/*    color: #f1f1f1;*/
+/*}*/
+
+
+/*.main {*/
+/*    margin-left: 160px;*/
+/*    padding: 0px 10px;*/
+/*}*/
+
+/*!* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) *!*/
+/*@media screen and (max-height: 450px) {*/
+/*    .sidenav {padding-top: 15px;}*/
+/*    .sidenav a {font-size: 18px;}*/
+/*}*/
+
+/*.title{*/
+/*    font-family: sans-serif;*/
+/*    text-align: center;*/
+/*    color: #054300;*/
+
+/*    font-size: 40px;*/
+
+/*}*/
+
+/*#titleArticle{*/
+/*    font-family: sans-serif;*/
+/*    text-align: center;*/
+/*    color: rgb(5, 67, 0);*/
+/*}*/
+
+/*#h2 {*/
+/*    text-align: center;*/
+/*}*/
+
+/*#h2_news_title a {*/
+/*    text-align: center;*/
+/*    color: #447a0e;*/
+/*    font-family: Sans-Serif;*/
+/*    font-size: medium;*/
+/*    text-decoration: none;*/
+/*}*/
+
+#ind_news_title {
+    text-align: center;
+    color: #447a0e;
+    font-family: Sans-Serif;
+    font-size: larger;
+}
+
+#ind_news_title:hover {
+    text-align: center;
+    color: #042b02;
+    font-family: Sans-Serif;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+/*#h3_show_cat a {*/
+/*    text-align: center;*/
+/*    color: #447a0e;*/
+/*    font-family: Sans-Serif;*/
+/*    font-size: medium;*/
+/*    text-decoration: none;*/
+/*}*/
+#pageName {
+    text-decoration: underline;
+    color: #054300;
+    text-align: center;
+    margin-left: 15px;
+}
+
+/*body {*/
+/*    width: 75%;*/
+/*    max-width: 600px;*/
+/*    margin: 0 auto 32px auto;*/
+/*    background-color: #f9f9f9;*/
+/*}*/
+
+/*p {*/
+/*    text-align: left;*/
+/*}*/
+
+/*#myInput {*/
+
+/*    background-position: 10px 12px;*/
+/*    width: 80%;*/
+/*    font-size: 16px;*/
+/*    padding: 12px 20px 12px 40px;*/
+/*    border: 1px solid #ddd;*/
+/*    margin-bottom: 12px;*/
+/*}*/
+
+/*#mySearchButton {*/
+
+/*    background-position: 10px 12px;*/
+/*    width: 80%;*/
+/*    font-size: 16px;*/
+/*    padding: 12px 20px 12px 40px;*/
+/*    border: 1px solid #ddd;*/
+/*    margin-bottom: 12px;*/
+/*}*/
+
+/*#myUL {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.news_list {*/
+/*    list-style-type: none;*/
+/*}*/
+
+
+
+
+/*form {*/
+/*    margin: 20px 0;*/
+/*    padding: 20px;*/
+/*    background-color: #f9f9f9;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*    max-width: 600px;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+/*form p {*/
+/*    margin-bottom: 15px;*/
+/*}*/
+
+/*label {*/
+/*    font-weight: bold;*/
+/*    display: block;*/
+/*    margin-bottom: 5px;*/
+/*    font-size: 14px;*/
+/*    color: #333;*/
+/*}*/
+
+/*input[type="text"],*/
+/*select {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    font-size: 14px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    box-sizing: border-box;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*!* Style for textarea with dynamic height *!*/
+/*textarea {*/
+/*    width: 100%; !* Full width *!*/
+/*    min-height: 150px; !* Default height *!*/
+/*    max-height: 400px; !* Maximum height *!*/
+/*    resize: vertical; !* Allow user to resize only vertically *!*/
+/*    padding: 10px;*/
+/*    font-size: 14px;*/
+/*    line-height: 1.5;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*!* Submit button style *!*/
+/*input[type="submit"] {*/
+/*    background-color: #28a745;*/
+/*    color: white;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*input[type="submit"]:hover {*/
+/*    background-color: #218838;*/
+/*}*/
+
+/*a {*/
+/*    color: #007bff;*/
+/*    text-decoration: none;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+
+/*#link_style_button {*/
+/*    background: none !important;*/
+/*    border: none !important;*/
+/*    color: blue !important;*/
+/*    cursor: pointer !important;*/
+/*    text-decoration: underline !important;*/
+/*    padding: 0 !important;*/
+/*    font-size: inherit !important;*/
+/*    font-family: inherit !important;*/
+/*}*/
+
+/*#link_style_button:hover {*/
+/*    color: #1558b0; !* Darker blue on hover *!*/
+/*    text-decoration: none; !* Remove underline on hover *!*/
+/*}*/

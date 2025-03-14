@@ -1,0 +1,38 @@
+<body>
+<div class="sidenav">
+  <%= link_to "Home", {:action => 'home'} %>
+  <%= link_to "News", {:action => 'show_categories'} %>
+  <%= link_to "Categories", news_show_categories_path  %>
+  <%= link_to "Admin", admin_news_index_path %>
+</div>
+<div class="main">
+  <h1 class="pageTitle">Games News</h1>
+  <div align="center">
+    <div align="center" id="form_search">
+      <%= form_tag search_news_index_path, method: :get do %>
+        <input type="text" name="query" id="myInput" placeholder="Search for news..." value="<%= params[:query] %>" >
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
+    <ul id="myUL">
+      <h2 id="pageName">Latest News</h2>
+      <br>
+      <!-- Display Title and news content -->
+      <% if @news.blank? %>
+        <p>There are not any news currently in the system.</p>
+      <% else %>
+        <ul id="news-list">
+<!--          show only news that are not hidden-->
+          <% @news.where(hidden: false).each do |news| %>
+            <li class="news_list" >
+              <h2 id="h2_news_title"><%= link_to news.title , {:action => 'show', :id => news.id} %></h2>
+              <p class="maxText"><%= news.content %></p>
+              <%= link_to "Read More", {:action => 'show', :id => news.id} %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</body>

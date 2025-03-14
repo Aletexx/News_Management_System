@@ -1,0 +1,27 @@
+<body>
+<div class="sidenav">
+  <%= link_to "Admin Home", admin_news_index_path %>
+  <%#= link_to "News", {:action => 'show_categories'} %>
+  <%= link_to "Logout", news_home_path %>
+</div>
+<div class="main">
+  <h1 class="pageTitle">Admin - Games News Management System </h1> <br>
+  <div align="center">
+    <ul id="myUL">
+<!--      show individual news-->
+      <h2 id="ind_news_title"><%= @news.title %></h2>
+      <div class="article" >
+        <p>
+          <strong>Source: </strong><%= @news.source %><br />
+          <strong>Category: </strong><%= @news.category.name %><br />
+          <strong>Date: </strong> <%= @news.created_at %><br />
+        <p><%= @news.content %></p>
+        </p>
+        <hr />
+        <br>
+      </div>
+    </ul>
+    <%= link_to 'Back to admin homepage', admin_news_index_path %>
+  </div>
+</div>
+</body>
